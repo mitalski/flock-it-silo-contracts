@@ -1,0 +1,25 @@
+[profile.default]
+libs = [
+    'gitmodules',
+    'node_modules',
+    'lib'
+]
+
+out = 'cache/foundry/out'
+evm_version = 'cancun'
+gas_limit = '40000000000'
+broadcast = '/broadcast'
+
+[fuzz]
+max_test_rejects = 131072 # 65536 * 2 (doubled a default value)
+
+[rpc_endpoints]
+anvil = "${RPC_ANVIL}"
+sonic = "${RPC_SONIC}"
+arbitrum = "${RPC_ARBITRUM}"
+
+[etherscan]
+sonic = { key = "${VERIFIER_API_KEY_SONIC}", chain = 146, url = "${VERIFIER_URL_SONIC}" }
+arbitrum = { key = "${ETHERSCAN_API_KEY}" }
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config
